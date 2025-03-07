@@ -52,6 +52,9 @@ def includeDesktopSupport = false
 // Defining my dependencies. In this case, WPILib (+ friends), and vendor libraries.
 // Also defines JUnit 5.
 dependencies {
+    implementation 'com.revrobotics.frc:SparkMax-java:1.5.2'
+    implementation 'edu.wpi.first.wpilibj:wpilibj-java:2025.1.0'
+
     annotationProcessor wpi.java.deps.wpilibAnnotations()
     implementation wpi.java.deps.wpilib()
     implementation wpi.java.vendor.java()
