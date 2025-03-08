@@ -105,3 +105,10 @@ wpi.java.configureTestTasks(test)
 tasks.withType(JavaCompile) {
     options.compilerArgs.add '-XDstringConcat=inline'
 }
+
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.photonvision.org/repository/maven-public/' }
+    maven { url 'https://photonvision.org/maven/' }
+}
+

@@ -107,8 +107,12 @@ public final class Constants {
     //Cam mounted on the right front swerve module facing the reef when scoring.
     public static final Transform3d kRobotToCamFront = 
         new Transform3d(new Translation3d (0.216, -0.305, 0.154), new Rotation3d(0.0,-0.349, 0.785));
-    public static final Transform3d kRobotToCamRear =
-        new Transform3d(new Translation3d(-0.235, 0.210, 0.176), new Rotation3d(0.0, -1.04, Math.PI)); 
+    public static final Transform3d kRobotToCamRear = 
+        new Transform3d(
+            new Translation3d(-0.3, 0.0, 1.2), // (X: back, Y: centered, Z: higher)
+            new Rotation3d(0.0, Math.toRadians(-20), Math.toRadians(180)) // Tilted downward, facing back
+        );
+    
 
     // The layout of the AprilTags on the field
     public static final AprilTagFieldLayout kTagLayout = AprilTagFieldLayout.loadField(AprilTagFields.k2025Reefscape);
