@@ -16,4 +16,9 @@ public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
   }
+
+  public static class AlgaeConstants {
+    public static final double intakeSpeed = 0.5;
+    public static final double outtakeSpeed = 0.5;
+  }
 }
