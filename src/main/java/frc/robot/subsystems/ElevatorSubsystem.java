@@ -22,10 +22,7 @@ public class ElevatorSubsystem extends SubsystemBase {
   private final SparkMax elevLeftMotor = new SparkMax(13, MotorType.kBrushless);
   private final SparkMax elevRightMotor = new SparkMax(14, MotorType.kBrushless);
 
-  private final RelativeEncoder elevRightEncoder = elevLeftMotor.getEncoder();
-
-  // PID Controller
-
+  private final RelativeEncoder elevRightEncoder = elevRightMotor.getEncoder();
 
   public ElevatorSubsystem() {
 
@@ -33,17 +30,21 @@ public class ElevatorSubsystem extends SubsystemBase {
   
   // Measuring elevator height
   private final double kEncoderTick2Meter = 1.0 / 4096.0 * 2.0 * Math.PI * 0.0254; //chat this right?
+  
   public double getLEncoderMeters() {
     return elevRightEncoder.getPosition() * kEncoderTick2Meter; 
   }
+  
   public double getREncoderMeters() {
     return elevRightEncoder.getPosition()* kEncoderTick2Meter;
   }
+
     //or just this
   public double getEncoderElevatorPosition() {
     return (elevRightEncoder.getPosition());
   }
 
+  // Set motor speed
   public void setMotor (double speed) {
     elevLeftMotor.set(speed);
     elevRightMotor.set(-speed);
@@ -58,9 +59,9 @@ public class ElevatorSubsystem extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-    SmartDashboard.putNumber("Elevator left encoder value", getLEncoderMeters());
-    SmartDashboard.putNumber("Elevator right encoder value", getREncoderMeters());
+    SmartDashboard.putNumber("Elevator L Height", getLEncoderMeters());
+    SmartDashboard.putNumber("Elevator R Height", getREncoderMeters());
 
-    SmartDashboard.putNumber("Elevator Right Encoder", getEncoderElevatorPosition());
+    SmartDashboard.putNumber("Elevator Right Encoder Position", getEncoderElevatorPosition());
   }
 }

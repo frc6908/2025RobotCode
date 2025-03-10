@@ -10,12 +10,12 @@ import com.revrobotics.spark.SparkMax;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class CoralIntakeSys extends SubsystemBase {
+public class CoralSubsystem extends SubsystemBase {
   
   private final SparkMax coralIntakeMotor1 = new SparkMax(15, MotorType.kBrushless);
   private final SparkMax coralIntakeMotor2 = new SparkMax(16, MotorType.kBrushless);
 
-  public CoralIntakeSys() {
+  public CoralSubsystem() {
 
   }
 

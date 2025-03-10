@@ -4,7 +4,7 @@ import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.ElevatorSubsystem;
 
-public class ElevatorPIDCmd extends Command{
+public class ElevatorPID extends Command{
 
     private final ElevatorSubsystem elevatorSubsystem;
     private final PIDController pidController;
@@ -14,7 +14,15 @@ public class ElevatorPIDCmd extends Command{
     private static final double kI = 0.0;
     private static final double kD = 0.0;
 
-    public ElevatorPIDCmd(ElevatorSubsystem elevatorSubsystem, double setpoint) {
+    // Setpoints
+    public static final class CoralSetpoints {
+        public static final double L1 = 0.0;
+        public static final double L2 = 0.0;
+        public static final double L3 = 0.0;
+        public static final double L4 = 0.0;
+    }
+
+    public ElevatorPID(ElevatorSubsystem elevatorSubsystem, double setpoint) {
         this.elevatorSubsystem = elevatorSubsystem;
       
         this.pidController = new PIDController(kP, kI, kD);
