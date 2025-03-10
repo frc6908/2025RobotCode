@@ -24,7 +24,7 @@ public class ElevJoystickCmd extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    System.out.println("Ananth is dumb! Elevator Joystick Command Initialized");
+    System.out.println("Elevator Joystick Command Initialized");
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -37,7 +37,7 @@ public class ElevJoystickCmd extends Command {
   @Override
   public void end(boolean interrupted) {
     elevatorSubsystem.setMotor(0);
-    System.out.println("Ananth is dumb! Elevator Joystick Command Ended");
+    System.out.println("Elevator Joystick Command Ended");
   }
 
   // Returns true when the command should end.
